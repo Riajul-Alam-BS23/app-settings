@@ -1,0 +1,190 @@
+{
+    "settings": {
+        "alerts": {
+            "emailConfig": {
+                "label": "EMAIL ADDRESSES TO COPY",
+                "subLabel": "",
+                "isHighlighted": "false"
+            },
+            "general": {
+                "label": "GENERAL ALERTS",
+                "subLabel": "Receive an email if these alerts are triggered",
+                "isHighlighted": "false",
+                "emails": [],
+                "machineRelocation": {
+                    "label": "Machine Relocated",
+                    "subLabel": "Triggered if the machine reported a location that is outside the set radius of its home location. № Alert Radius(1 mile = 1.6 km)",
+                    "option": [
+                        "0.5 mile",
+                        "1 mile",
+                        "2 miles",
+                        "5 miles"
+                    ],
+                    "default": "1 mile"
+                },
+                "noCharge": {
+                    "label": "No Charge Alert",
+                    "subLabel": "Triggered if the machine reported usage but the battery was not charged on that calendar day.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "opportunityCharge": {
+                    "label": "Opportunity Charge Alert",
+                    "subLabel": "Triggered if the machine reported its battery being plugged in for charging but not to completion.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "chargerError": {
+                    "label": "Charger Error",
+                    "subLabel": "Triggered if a charger error is reported by the machine.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "impactDetected": {
+                    "label": "Impact Detected",
+                    "subLabel": "Triggered if an impact detected is reported by the machine.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "noCommunication": {
+                    "label": "No Communication",
+                    "subLabel": "Triggered if a machine has not communicated with the portal for the selected period.",
+                    "option": [
+                        "1 day",
+                        "2 days",
+                        "7 days",
+                        "14 days"
+                    ],
+                    "default": "7 days"
+                },
+                "maintenanceReminder": {
+                    "label": "Maintenance Reminder",
+                    "subLabel": "Triggered if a machine reaches a threshold of cleaning hours. *Only available for certain models. Please contact your sales rep for details.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "Off"
+                }
+            },
+            "others": {
+                "label": "OTHER ALERTS",
+                "subLabel": "Only available for certain customers. Please contact your sales rep for details.",
+                "isHighlighted": "true",
+                "emails": [],
+                "noServicePerformed": {
+                    "label": "No Service Performed",
+                    "subLabel": "Triggered if a machine has not been serviced in the selected period.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "serviceRequest": {
+                    "label": "Service Request",
+                    "subLabel": "Triggered if a Service Request has been created or completed.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                },
+                "ABWtankEmpty": {
+                    "label": "ABW Tank Empty",
+                    "subLabel": "Triggered when Automatic Battery Watering (ABW) Tank needs to be filled with distilled water.",
+                    "option": [
+                        "On",
+                        "Off"
+                    ],
+                    "default": "On"
+                }
+            }
+        },
+        "low_usage": {
+            "label": "LOW USAGE",
+            "subLabel": "Receive an email if a machine is used less than a chosen threshold",
+            "isHighlighted": "false",
+            "emails": [],
+            "daily": {
+                "label": "Daily",
+                "subLabel": "Set value lower than what you consider low",
+                "option": [
+                    "1 hr",
+                    "2 hr",
+                    "3 hr",
+                    "4 hr",
+                    "5 hr"
+                ],
+                "default": "2 hr"
+            },
+            "weekly": {
+                "label": "Weekly",
+                "subLabel": "Set value lower than what you consider low",
+                "option": [
+                    "8 hr",
+                    "16 hr",
+                    "24 hr",
+                    "32 hr"
+                ],
+                "default": "16 hr"
+            },
+            "monthly": {
+                "label": "Monthly",
+                "subLabel": "Set value lower than what you consider low",
+                "option": [
+                    "25 hr",
+                    "30 hr",
+                    "35 hr",
+                    "40 hr"
+                ],
+                "default": "35 hr"
+            }
+        },
+        "reports":{
+            "emailConfig": {
+                "label": "EMAIL ADDRESSES TO COPY",
+                "subLabel": null,
+                "isHighlighted": "false"
+            },
+            "reportOptions": {
+                "label": "REPORTS",
+                "subLabel": "",
+                "isHighlighted": "false",
+                "emails": [],
+                "machineRelocation": {
+                    "label": "Machine Relocated",
+                    "subLabel": "Triggered if the machine reported a location that is outside the set radius of its home location. № Alert Radius(1 mile = 1.6 km)",
+                    "option": [
+                        "Weekly",
+                        "Monthly",
+                        "Quarterly"
+                    ],
+                    "default": "Weekly"
+                },
+                "noCommunication": {
+                    "label": "No Communication",
+                    "subLabel": "Triggered if a machine has not communicated with the portal for the selected period.",
+                    "option": [
+                        "Weekly",
+                        "Monthly",
+                        "Quarterly"
+                    ],
+                    "default": "Weekly"
+                }
+            }
+        }
+    }
+}

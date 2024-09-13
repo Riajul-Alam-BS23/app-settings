@@ -1,0 +1,33 @@
+@use '../../../../../../styles/abstracts/abstracts' as *;
+
+
+.item-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .title{
+        width: 70%;
+    }
+    .dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 30%;
+        margin-right: 10px;
+    }
+
+    @include respond-to(small) {
+        .title{
+            width: 70%;
+            margin-right: 20px;
+        }
+        .dropdown{
+            width: 30%;
+        }
+    }
+
+}
+hr{
+    border: 1px solid #ddd;
+}
+

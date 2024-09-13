@@ -1,0 +1,137 @@
+@use '../../../../styles/abstracts/abstracts' as *;
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    img {
+        height: 30px;
+        width: 60px;
+    }
+}
+
+.menu {
+    display: flex;
+    span {
+        font-size: 12px;
+        font-weight: 700;
+        color: rgb(143, 143, 143);
+    }
+}
+
+.menu-item {
+    margin-right: 10px;
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+}
+
+.action-item {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.action-item-text {
+    font-size: 12px;
+    color: #333;
+    margin-left: 5px;
+}
+
+.action-item-count {
+    background-color: red;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 50%;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+.action-item-email {
+    font-size: 10px;
+    color: #333;
+    margin-left: 5px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+}
+
+.hamburger i {
+    font-size: 30px;
+}
+
+.user-button{
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 5px;
+    padding: 3px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    .fa-regular{
+        color:$primary-color;
+    }
+}
+
+
+@media only screen and (max-width: 576px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu-item {
+        margin: 10px 0;
+    }
+
+    .actions {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+

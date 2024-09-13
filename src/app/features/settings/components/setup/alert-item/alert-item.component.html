@@ -1,0 +1,16 @@
+
+<div class="item-container">
+    <div class="title">
+        <app-title 
+        [title]="createTitle(alert.label,alert.subLabel)"
+        ></app-title>
+    </div>
+    <div class="dropdown">
+        <app-dropdown
+        [options]="alert.option"
+        [selectedOption]="alert.default"
+        [alertObject]="alert"
+        ></app-dropdown>
+    </div>
+</div>
+<hr>

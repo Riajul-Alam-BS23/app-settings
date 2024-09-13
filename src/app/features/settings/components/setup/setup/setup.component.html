@@ -1,0 +1,68 @@
+<!-- <div class="setup">
+    <div class="container1">
+        <app-settings-container
+        [objectType]="[{ name: 'general', data: general }, { name: 'others', data: others }]"
+        >
+            <app-alert-container
+            [alerts]="general"
+            ></app-alert-container>
+            <app-alert-container 
+            [alerts]="others"
+            [backgroundColor]="'#eeeff1'"
+            ></app-alert-container>
+        </app-settings-container>
+    </div>
+    
+    
+    <div class="container">
+        <app-settings-container
+        [objectType]="[{ name: 'low_usage', data: low_usage }]"
+        >
+            <app-alert-container
+            [alerts]="low_usage"
+            ></app-alert-container>
+        </app-settings-container>
+    </div>
+    <div class="container">
+        <app-settings-container
+        [objectType]="[{ name: 'reports', data: reports }]"
+        >
+            <app-alert-container
+            [alerts]="reports"
+            ></app-alert-container>
+        </app-settings-container>
+    </div>
+
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="setup-main-container">
+    <div *ngIf="settings">
+        <!-- Iterate over settings object using KeyValuePipe -->
+         <div *ngFor="let section of settings | keyvalue">
+                <!-- Iterate over alerts, low_usage, or reports, etc. -->
+                <div *ngFor="let item of section.value | keyvalue">
+                    <div class="container">
+                        <app-settings-container
+                        [objectType]="item"
+                        >
+                            <app-alert-container
+                            [alerts]="item"
+                            ></app-alert-container>
+                        </app-settings-container>
+                    </div>
+                </div>
+         </div>
+    </div>
+</div>

@@ -1,0 +1,65 @@
+@use '../../../../../../styles/abstracts/abstracts' as *;
+
+
+.custom-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+    width: 100px;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    font-weight: bold;
+
+    @include respond-to(small) {
+        padding: 7px 10px;
+        width: 120px;
+    }
+    @include respond-to(medium) {
+        padding: 7px 10px;
+        width: 150px;
+    }
+}
+
+
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #333;
+}
+
+.dropdown-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+
+    .option {
+        padding: 7px 10px;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+
+        &:hover {
+            background-color: #e9e9e9;
+        }
+    }
+}
+
+.custom-dropdown.active .dropdown-options {
+    display: block;
+}

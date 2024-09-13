@@ -1,0 +1,9 @@
+<div class="custom-dropdown" [class.active]="dropdownOpen" (click)="toggleDropdown()" (click)="preventCloseOnClick()">
+    <span class="selected-option">{{ selectedOption }}</span>
+    <i class="arrow-down"></i>
+    <ul class="dropdown-options" *ngIf="dropdownOpen" (click)="closeDropdown($event)">
+        <li class="option" *ngFor="let option of options" (click)="selectOption(option,$event)">
+            {{ option }}
+        </li>
+    </ul>
+</div>

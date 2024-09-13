@@ -1,0 +1,15 @@
+<div class="alert-container"  [ngStyle]="{'background-color': backgroundColor}" >
+    <div class="alert-container-header">
+        <app-title 
+        [title]="createTitle(alerts.label,alerts.subLabel)"
+        [titleType]="true"
+        ></app-title>
+    </div>
+    <div class="alert-container-content">
+        <div *ngFor="let alertKey of getAlertKeys(alerts)">
+            <app-alert-item
+            [alert]="alerts[alertKey]"
+            ></app-alert-item>
+        </div>
+    </div>
+</div>

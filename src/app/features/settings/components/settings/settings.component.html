@@ -1,1 +1,12 @@
-<p>settings works!</p>
+
+<div class="settings-container">
+    <div class="outer-switch-container">
+        <div class="button-container">
+            <button class="tab-button" [class.active]="activeTab === 'account'" (click)="switchTab('account')">Account</button>
+            <button class="tab-button" [class.active]="activeTab === 'setup'" (click)="switchTab('setup')">Set-up</button>
+        </div>
+    </div>
+    <div class="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
