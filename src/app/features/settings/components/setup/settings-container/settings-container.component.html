@@ -5,7 +5,13 @@
             ></ng-content>
         </div>
         <div class="button-container">
-            <button class="apply-button" (click)="onApplyChange()">Apply Changes</button>
+            <button 
+                [disabled]="!onChangeDetect" 
+                class="apply-button" 
+                (click)="onApplyChange()"
+            >
+                Apply Changes
+            </button>
         </div>
     </div>
 </div>

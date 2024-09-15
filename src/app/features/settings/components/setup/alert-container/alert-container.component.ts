@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { AlertOptions } from '../../../models/SetUp';
-
 @Component({
   selector: 'app-alert-container',
   templateUrl: './alert-container.component.html',
@@ -9,20 +7,25 @@ import { AlertOptions } from '../../../models/SetUp';
 export class AlertContainerComponent implements OnInit {
   @Input() backgroundColor:string;
   @Input() alerts;
+  @Input() key:string[];
   constructor() { }
 
   ngOnInit(): void {
-    console.log("Alerts in alert container ==> ",this.alerts)
+    this.key.push(this.alerts.key);
+    if(this.alerts.value.label){
+    }
+    // console.log("********** ==> ",this.key)
   }
-  createTitle(label:string,subLabel:string){
-    const item:{title:string,subTitle:string}={
-      title: label,
-      subTitle: subLabel
-    };
-    return item;
+  isObject(value: any): boolean {
+    return (typeof value === 'object');
   }
-  getAlertKeys(alerts: any): string[] {
-    return Object.keys(alerts).filter(key => key !== 'label' && key !== 'subLabel');
+  isHighlighted(){
+    return this.alerts.value.isHighlighted==="true"?true:false;
   }
-
+  getKey(item:any){
+    const currentKey=[...this.key];
+    currentKey.push(item.key);
+    return currentKey;
+  }
+  
 }

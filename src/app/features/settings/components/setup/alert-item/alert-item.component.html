@@ -2,7 +2,7 @@
 <div class="item-container">
     <div class="title">
         <app-title 
-        [title]="createTitle(alert.label,alert.subLabel)"
+        [title]="alert"
         ></app-title>
     </div>
     <div class="dropdown">
@@ -10,6 +10,7 @@
         [options]="alert.option"
         [selectedOption]="alert.default"
         [alertObject]="alert"
+        [key]="key"
         ></app-dropdown>
     </div>
 </div>

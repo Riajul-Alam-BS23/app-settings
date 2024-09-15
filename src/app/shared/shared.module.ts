@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LayoutModule } from './layout/layout.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -11,11 +12,13 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FormsModule,
     LayoutModule,
+    HttpClientModule,
   ],
   exports:[
     FormsModule,    
     LayoutModule,
     CommonModule,
+    HttpClientModule
   ]
 })
 export class SharedModule { }

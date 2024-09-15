@@ -9,19 +9,9 @@ import { SingleAlert } from '../../../models/SetUp';
 export class AlertItemComponent implements OnInit {
   @Input() titleType:boolean;
   @Input() alert;
+  @Input() key;
   constructor() { }
-
   ngOnInit(): void {
+    // console.log("Alert Item ",this.key)
   }
-  createTitle(title:string,subTitle){
-    const currenTitle:{
-      title:string,
-      subTitle:string
-    }={
-      title:title,
-      subTitle:subTitle
-    };
-    return currenTitle;
-  }
-
 }

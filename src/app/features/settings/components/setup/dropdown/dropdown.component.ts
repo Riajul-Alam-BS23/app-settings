@@ -1,20 +1,25 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
+import { SettingsService } from '../../../services/settings.service';
+import { SettingsCommunicationService } from '../../../services/settings-communication.service';
 
 @Component({
   selector: 'app-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
   @Input() options: string[];
   @Input() selectedOption;
   @Input() alertObject;
-
+  @Input() key;
+  
   dropdownOpen = false;
   menuBtnClick = false;
   
   constructor(
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private settingsService:SettingsService,
+    private settingsCommunicationService: SettingsCommunicationService
   ) {}
   
   ngOnInit(): void {
@@ -29,11 +34,16 @@ export class DropdownComponent implements OnInit {
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
+
   selectOption(option: string,event:Event) {
     this.selectedOption = option;
     this.alertObject.default=option;
+    console.log(this.key," ",option)
+    this.settingsCommunicationService.updateApplyChanges(true);
+    this.settingsService.updateKeyValueStore(this.key,option);
     this.closeDropdown(event);
   }
+
   closeDropdown(event: Event) {
     event.stopPropagation();
     this.dropdownOpen = false;
@@ -42,4 +52,5 @@ export class DropdownComponent implements OnInit {
   preventCloseOnClick(){
     this.menuBtnClick = true;
   }
+
 }

@@ -1,24 +1,34 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SettingsService } from '../../../services/settings.service';
-import { PostData } from '../../../models/PostData';
+import { SettingsCommunicationService } from '../../../services/settings-communication.service';
 
 @Component({
   selector: 'app-settings-container',
   templateUrl: './settings-container.component.html',
-  styleUrls: ['./settings-container.component.scss']
+  styleUrls: ['./settings-container.component.scss'],
+  providers:[
+    SettingsCommunicationService
+  ]
 })
 export class SettingsContainerComponent implements OnInit {
-  @Input() objectType;
+  @Input() key:any;
+  onChangeDetect=false;
   constructor(
-    private settingsService:SettingsService
+    private settingsService:SettingsService,
+    private communicationService:SettingsCommunicationService
   ) { }
 
   ngOnInit(): void {
+    this.communicationService.getShowApplyChanges().subscribe(data=>{
+      this.onChangeDetect=data;
+    })
   }
   
   onApplyChange(){
-    this.settingsService.updateCombineAlertsData(this.objectType);
+    this.settingsService.updateOnApplyChanges(this.key);
+    this.communicationService.updateApplyChanges(false);
   }
-
-
 }
+
+
+

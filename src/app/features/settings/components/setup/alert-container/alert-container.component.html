@@ -1,15 +1,20 @@
-<div class="alert-container"  [ngStyle]="{'background-color': backgroundColor}" >
-    <div class="alert-container-header">
+
+<div>
+    <div class="alert-container"  [ngStyle]="{'background-color': ( isHighlighted()? '#ddd': 'RGB(255, 255, 255)')}">
+      <div class="alert-container-header">
         <app-title 
-        [title]="createTitle(alerts.label,alerts.subLabel)"
-        [titleType]="true"
+          [title]="{label:alerts.value.label,subLabel:alerts.value.subLabel}"
+          [titleType]="true"
         ></app-title>
-    </div>
-    <div class="alert-container-content">
-        <div *ngFor="let alertKey of getAlertKeys(alerts)">
-            <app-alert-item
-            [alert]="alerts[alertKey]"
-            ></app-alert-item>
+      </div>
+      <div class="alert-container-content">
+        <div *ngFor="let alertKey of alerts.value | keyvalue">
+          <app-alert-item *ngIf="isObject(alertKey.value)"
+            [key]="getKey(alertKey)"
+            [alert]="alertKey.value"
+          ></app-alert-item>
         </div>
+      </div>
     </div>
 </div>
+  

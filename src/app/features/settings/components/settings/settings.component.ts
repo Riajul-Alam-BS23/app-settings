@@ -8,18 +8,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./settings.component.scss']
 })
 export class SettingsComponent implements OnInit {
-  title:{title:string,subTitle:string};
-  titleType:boolean=true;
-  data;
-  general:any;
-  others:any;
-  low_usage:any;
-  reports:any;
 
   activeTab: string = 'account';
 
   constructor(
-    private  settingsService:SettingsService,
     private router:Router,
     private route:ActivatedRoute
   ) { }
@@ -31,7 +23,9 @@ export class SettingsComponent implements OnInit {
 
   switchTab(tab: string) {
     this.activeTab = tab;
-    this.router.navigate([`/settings/${tab}`]);
+  }
+  activeCheck(tab: string) {
+    return { 'active': this.activeTab === tab };
   }
 
 }
