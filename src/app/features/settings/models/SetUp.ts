@@ -12,3 +12,24 @@ export interface AlertOptions{
     subLabel: string;
     options:SingleAlert[];
 }
+
+
+
+
+// interface InnerObject{
+//     label: string;
+//     subLabel: string;
+
+// }
+
+
+// export interface Settings{
+//     object1:{
+//       innerObject1:{
+//         label:string,
+//         value:string,
+        
+//       }
+//     }
+//   }
+  

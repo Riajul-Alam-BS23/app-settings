@@ -10,6 +10,7 @@ import { SetupComponent } from './components/setup/setup/setup.component';
 import { AccountComponent } from './components/account/account/account.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { AlertItemComponent } from './components/setup/alert-item/alert-item.component';
+import { InputComponent } from './components/setup/input/input.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AlertItemComponent } from './components/setup/alert-item/alert-item.com
     AlertContainerComponent,
     SettingsContainerComponent,
     SetupComponent,
-    AccountComponent
+    AccountComponent,
+    InputComponent
   ],
   imports: [
     SharedModule,

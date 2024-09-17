@@ -1,8 +1,20 @@
 
 
-.account-container{
+.outer-container{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 1000px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
 }
+.account-container{
+    width: 1000px;
+    height: 1200px;
+    background-color: #EBEEF4;
+}
+
+
+
+
+

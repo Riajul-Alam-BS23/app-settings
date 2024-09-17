@@ -1,5 +1,5 @@
 
-<div class="item-container">
+<div class="item-container" *ngIf="!isArray(alert)">
     <div class="title">
         <app-title 
         [title]="alert"
@@ -9,9 +9,15 @@
         <app-dropdown
         [options]="alert.option"
         [selectedOption]="alert.default"
-        [alertObject]="alert"
         [key]="key"
         ></app-dropdown>
     </div>
 </div>
-<hr>
+<div class="input-container" *ngIf="isArray(alert)">
+    <app-input
+    [emails]="alert"
+    [key]="key"
+    >
+    </app-input>
+</div>
+<hr *ngIf="!isArray(alert)">

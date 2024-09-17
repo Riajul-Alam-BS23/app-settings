@@ -14,4 +14,7 @@ export class AlertItemComponent implements OnInit {
   ngOnInit(): void {
     // console.log("Alert Item ",this.key)
   }
+  isArray(value:any){
+    return Array.isArray(value);
+  }
 }

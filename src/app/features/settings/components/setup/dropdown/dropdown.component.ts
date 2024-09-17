@@ -10,7 +10,6 @@ import { SettingsCommunicationService } from '../../../services/settings-communi
 export class DropdownComponent implements OnInit {
   @Input() options: string[];
   @Input() selectedOption;
-  @Input() alertObject;
   @Input() key;
   
   dropdownOpen = false;
@@ -36,11 +35,11 @@ export class DropdownComponent implements OnInit {
   }
 
   selectOption(option: string,event:Event) {
-    this.selectedOption = option;
-    this.alertObject.default=option;
-    console.log(this.key," ",option)
-    this.settingsCommunicationService.updateApplyChanges(true);
-    this.settingsService.updateKeyValueStore(this.key,option);
+    if(this.selectedOption!=option){
+      this.selectedOption = option;
+      this.settingsCommunicationService.updateApplyChanges(true);
+      this.settingsService.updateKeyValueStore(this.key,option);
+    }
     this.closeDropdown(event);
   }
 

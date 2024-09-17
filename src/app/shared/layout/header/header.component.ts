@@ -6,15 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  menuOpen = false;
+  userButtonmenuOpen=false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-  menuOpen = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+  }
+  toggleUserButtonMenu() {
+    this.userButtonmenuOpen =!this.userButtonmenuOpen;
   }
 
 }

@@ -8,7 +8,7 @@
             <div *ngFor="let item of section.value | keyvalue">
                 <div class="container">
                     <app-alert-container
-                        [key]="getSubObjectKey(section)"
+                        [key]="getSubObjectKey(section,item)"
                         [alerts]="item"
                     >
                     </app-alert-container>

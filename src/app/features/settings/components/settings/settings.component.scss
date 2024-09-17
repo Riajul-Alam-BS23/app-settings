@@ -10,7 +10,7 @@
 .button-container {
     width: 1000px;
     display: flex;
-    background-color: #f3f5f9;
+    background-color: #EBEEF4;
     padding: 10px;
     @include respond-to(small) {
         display: flex;

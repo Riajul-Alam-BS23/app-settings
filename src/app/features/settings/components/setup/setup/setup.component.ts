@@ -1,6 +1,9 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../../services/settings.service';
 
+
+
+
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',
@@ -11,19 +14,16 @@ export class SetupComponent implements OnInit {
   title:{title:string,subTitle:string};
   titleType:boolean=true;
 
-  visited:boolean=false;
-
   settings:any;
 
   constructor(private settingsService:SettingsService,
     private cdr: ChangeDetectorRef
-
   ) { }
 
   ngOnInit(): void {
     this.settingsService.getAlertsData('settings').subscribe(data=>{
-      this.settings=data;
-      this.settingsService.settings=data;
+      this.settings = data;
+      this.settingsService.settings = JSON.parse(JSON.stringify(data));
       this.cdr.detectChanges();
     });
   }
@@ -36,14 +36,16 @@ export class SetupComponent implements OnInit {
     return value.value.label?false:true;
   }
 
-  getSubObjectKey(value:any){
+  getSubObjectKey(value:any,value2:any){
     const currentKey=['settings'];
     currentKey.push(value.key);
+    currentKey.push(value2.key);
     return [...currentKey];
   }
 
   getSingleObjectKey(value:any){
     const currentKey=['settings'];
+    currentKey.push(value.key);
     return [...currentKey];
   }
 

@@ -8,27 +8,50 @@
             <img style="height: 40px; width: 70px;" src="https://mms.businesswire.com/media/20201022005117/en/863276/23/4357163cTennantCompany-logo-fullcolor-transparent.jpg" alt="">
         </div>
     
-        <div class="menu" [ngClass]="{'open': menuOpen}">
-            <span class="menu-item">Overview</span>
-            <span class="menu-item">Location</span>
-            <span class="menu-item">Usage</span>
-            <span class="menu-item">Run Time</span>
-            <span class="menu-item">Admin</span>
-            <span class="menu-item">Service</span>
+        <div class="menu hide-item">
+            <a class="menu-item">Overview</a>
+            <a class="menu-item">Location</a>
+            <a class="menu-item">Usage</a>
+            <a class="menu-item">Run Time</a>
+            <a class="menu-item">Admin</a>
+            <a class="menu-item">Service</a>
         </div>
 
         <div class="actions">
             <span class="action-item">
                 <i class="fa fa-bell"></i>
-                <span class="action-item-text">Alerts</span>
+                <span class="action-item-text hide-item">Alerts</span>
                 <span class="action-item-count">25</span>
             </span>
-            <div class="user-button">
-                <span class="action-item">
-                    <i class="fa-regular fa-circle-user"></i>
-                    <span class="action-item-email">{{'USER@GMAIL.COM'}}</span>
-                </span>
-            </div>
+            <div class="dropdown">
+                <div class="user-button" (click)="toggleUserButtonMenu()">
+                    <span class="action-item">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <span class="action-item-email">{{'USER@GMAIL.COM'}}</span>
+                    </span>
+                </div>
+                <div class="dropdown-menu" *ngIf="userButtonmenuOpen">
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                  <a href="#">Option 3</a>
+                  <a href="#">Option 1</a>
+                  <a href="#">Option 2</a>
+                </div>
+              </div>
+              
         </div>
     </div>
+    <div class="nav-menu" [ngClass]="{'open': menuOpen}">
+        <a class="menu-item">Overview</a>
+        <a class="menu-item">Location</a>
+        <a class="menu-item">Usage</a>
+        <a class="menu-item">Run Time</a>
+        <a class="menu-item">Admin</a>
+        <a class="menu-item">Service</a>
+        <a class="menu-item">Account</a>
+    </div>
 </div>
+

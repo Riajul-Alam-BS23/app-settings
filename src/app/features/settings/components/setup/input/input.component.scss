@@ -1,0 +1,42 @@
+.email-container {
+    border: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #ddd;
+    border-radius: 8px;
+  }
+  
+  .email-item {
+    display: inline-block;
+    background-color: #FAFAFA;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    // position: relative;
+  }
+  
+  .remove-btn {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .email-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    font-size: 14px;
+    min-width: 150px;
+    background-color: #ddd;
+    margin: 5px;
+  }
+  
+  .email-input::placeholder {
+    color: #0a0a0a;
+  }
+  
