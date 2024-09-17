@@ -6,11 +6,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SettingsCommunicationService {
   private showApplyChanges = new BehaviorSubject<boolean>(false);
+
   constructor() { }
+
   updateApplyChanges(currentState:boolean){
     this.showApplyChanges.next(currentState);
   }
+
   getShowApplyChanges(){
     return this.showApplyChanges;
   }
+  
 }

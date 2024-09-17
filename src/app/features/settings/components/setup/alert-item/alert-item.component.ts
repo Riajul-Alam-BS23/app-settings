@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SingleAlert } from '../../../models/SetUp';
 
 @Component({
   selector: 'app-alert-item',
@@ -12,7 +11,6 @@ export class AlertItemComponent implements OnInit {
   @Input() key;
   constructor() { }
   ngOnInit(): void {
-    // console.log("Alert Item ",this.key)
   }
   isArray(value:any){
     return Array.isArray(value);

@@ -22,11 +22,9 @@ export class SettingsContainerComponent implements OnInit {
     this.communicationService.getShowApplyChanges().subscribe(data=>{
       this.onChangeDetect=data;
     });
-    console.log("app setting key =>",this.key)
   }
   
   onApplyChange(){
-    console.log("Applying change for key: ", this.key);
     this.settingsService.updateOnApplyChanges(this.key);
     this.communicationService.updateApplyChanges(false);
   }

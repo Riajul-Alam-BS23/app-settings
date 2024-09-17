@@ -24,7 +24,7 @@
             "2 miles",
             "5 miles"
           ],
-          "default": "0.5 mile"
+          "default": "5 miles"
         },
         "noCharge": {
           "label": "No Charge Alert",
@@ -51,7 +51,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "impactDetected": {
           "label": "Impact Detected",
@@ -103,7 +103,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "ABWtankEmpty": {
           "label": "ABW Tank Empty",
@@ -112,7 +112,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         }
       }
     },
@@ -130,7 +130,7 @@
           "4 hr",
           "5 hr"
         ],
-        "default": "2 hr"
+        "default": "5 hr"
       },
       "weekly": {
         "label": "Weekly",
@@ -152,7 +152,7 @@
           "35 hr",
           "40 hr"
         ],
-        "default": "25 hr"
+        "default": "30 hr"
       }
     },
     "reports": {
@@ -177,7 +177,7 @@
             "Monthly",
             "Quarterly"
           ],
-          "default": "Monthly"
+          "default": "Weekly"
         },
         "noCommunication": {
           "label": "No Communication",

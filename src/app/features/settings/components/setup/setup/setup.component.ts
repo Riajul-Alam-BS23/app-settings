@@ -1,9 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../../services/settings.service';
 
-
-
-
 @Component({
   selector: 'app-setup',
   templateUrl: './setup.component.html',

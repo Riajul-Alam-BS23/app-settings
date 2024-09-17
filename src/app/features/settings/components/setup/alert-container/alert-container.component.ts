@@ -12,9 +12,6 @@ export class AlertContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.key.push(this.alerts.key);
-    if(this.alerts.value.label){
-    }
-    // console.log("********** ==> ",this.key)
   }
   isObject(value: any): boolean {
     return (typeof value === 'object');
