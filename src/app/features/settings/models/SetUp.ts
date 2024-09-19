@@ -1,35 +1,11 @@
 
-
-export interface SingleAlert{
-    label: string;
-    subLabel: string;
-    option: string[];
-    default: string;
+export enum Endpoints {
+    settings
 }
 
-export interface AlertOptions{
-    label: string;
-    subLabel: string;
-    options:SingleAlert[];
+export interface Title {
+    label?: string;
+    subLabel?: string;
 }
 
 
-
-
-// interface InnerObject{
-//     label: string;
-//     subLabel: string;
-
-// }
-
-
-// export interface Settings{
-//     object1:{
-//       innerObject1:{
-//         label:string,
-//         value:string,
-        
-//       }
-//     }
-//   }
-  

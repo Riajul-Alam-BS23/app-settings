@@ -1,6 +1,11 @@
 
 
 <div class="title-container">
-    <h2 class="title" [ngClass]="titleType === true ? 'h2title' : 'h2item'">{{title.label}}</h2>
+    <h2 
+        class="title" 
+        [ngClass]="getTitleType()"
+    >{{title.label}}</h2>
+
     <p class="subTitle">{{title.subLabel}}</p>
+    
 </div>

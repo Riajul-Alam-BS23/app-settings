@@ -13,20 +13,21 @@ import { SettingsCommunicationService } from '../../../services/settings-communi
 export class SettingsContainerComponent implements OnInit {
   @Input() key:any;
   onChangeDetect=false;
+  
   constructor(
     private settingsService:SettingsService,
     private communicationService:SettingsCommunicationService
   ) { }
 
   ngOnInit(): void {
-    this.communicationService.getShowApplyChanges().subscribe(data=>{
+    this.communicationService.getApplyChangesState().subscribe(data=>{
       this.onChangeDetect=data;
     });
   }
   
   onApplyChange(){
     this.settingsService.updateOnApplyChanges(this.key);
-    this.communicationService.updateApplyChanges(false);
+    this.communicationService.updateApplyChangesState(false);
   }
 }
 

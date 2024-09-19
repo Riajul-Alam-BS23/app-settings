@@ -1,24 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LayoutModule } from './layout/layout.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    LoadingSpinnerComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,
-    LayoutModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports:[
-    FormsModule,    
-    LayoutModule,
+    FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    HeaderComponent,
+    FooterComponent,
+    LoadingSpinnerComponent,
   ]
 })
 export class SharedModule { }

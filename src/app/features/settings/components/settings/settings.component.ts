@@ -12,7 +12,6 @@ export class SettingsComponent implements OnInit {
   activeTab: string = 'account';
 
   constructor(
-    private router:Router,
     private route:ActivatedRoute
   ) { }
   ngOnInit(): void {

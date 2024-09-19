@@ -1,14 +1,13 @@
 {
   "settings": {
-    "alerts": {
+    "1.alerts": {
       "emailConfig": {
         "label": "EMAIL ADDRESSES TO COPY",
         "subLabel": "",
         "isHighlighted": "false",
         "emails": [
           "Name@email.com",
-          "riajulalam5@gmail.com",
-          "riajulalam51@gmail.com"
+          "riajulalam5@gmail.com"
         ]
       },
       "general": {
@@ -24,7 +23,7 @@
             "2 miles",
             "5 miles"
           ],
-          "default": "5 miles"
+          "default": "0.5 mile"
         },
         "noCharge": {
           "label": "No Charge Alert",
@@ -60,7 +59,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "noCommunication": {
           "label": "No Communication",
@@ -71,7 +70,7 @@
             "7 days",
             "14 days"
           ],
-          "default": "7 days"
+          "default": "1 day"
         },
         "maintenanceReminder": {
           "label": "Maintenance Reminder",
@@ -94,7 +93,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "serviceRequest": {
           "label": "Service Request",
@@ -103,7 +102,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "ABWtankEmpty": {
           "label": "ABW Tank Empty",
@@ -116,53 +115,55 @@
         }
       }
     },
-    "low_usage": {
-      "label": "LOW USAGE",
-      "subLabel": "Receive an email if a machine is used less than a chosen threshold",
-      "isHighlighted": "false",
-      "daily": {
-        "label": "Daily",
-        "subLabel": "Set value lower than what you consider low",
-        "option": [
-          "1 hr",
-          "2 hr",
-          "3 hr",
-          "4 hr",
-          "5 hr"
-        ],
-        "default": "5 hr"
-      },
-      "weekly": {
-        "label": "Weekly",
-        "subLabel": "Set value lower than what you consider low",
-        "option": [
-          "8 hr",
-          "16 hr",
-          "24 hr",
-          "32 hr"
-        ],
-        "default": "8 hr"
-      },
-      "monthly": {
-        "label": "Monthly",
-        "subLabel": "Set value lower than what you consider low",
-        "option": [
-          "25 hr",
-          "30 hr",
-          "35 hr",
-          "40 hr"
-        ],
-        "default": "30 hr"
+    "2.usage": {
+      "low_usage": {
+        "label": "LOW USAGE",
+        "subLabel": "Receive an email if a machine is used less than a chosen threshold",
+        "isHighlighted": "false",
+        "daily": {
+          "label": "Daily",
+          "subLabel": "Set value lower than what you consider low",
+          "option": [
+            "1 hr",
+            "2 hr",
+            "3 hr",
+            "4 hr",
+            "5 hr"
+          ],
+          "default": "5 hr"
+        },
+        "weekly": {
+          "label": "Weekly",
+          "subLabel": "Set value lower than what you consider low",
+          "option": [
+            "8 hr",
+            "16 hr",
+            "24 hr",
+            "32 hr"
+          ],
+          "default": "32 hr"
+        },
+        "monthly": {
+          "label": "Monthly",
+          "subLabel": "Set value lower than what you consider low",
+          "option": [
+            "25 hr",
+            "30 hr",
+            "35 hr",
+            "40 hr"
+          ],
+          "default": "25 hr"
+        }
       }
     },
-    "reports": {
+    "3.reports": {
       "emailConfig": {
         "label": "EMAIL ADDRESSES TO COPY",
         "subLabel": "",
         "isHighlighted": "false",
         "emails": [
           "Name@email.com",
-          "riajulalam5@gmail.com"
+          "test@gmail.com"
         ]
       },
       "reportOptions": {
@@ -177,7 +178,7 @@
             "Monthly",
             "Quarterly"
           ],
-          "default": "Weekly"
+          "default": "Quarterly"
         },
         "noCommunication": {
           "label": "No Communication",

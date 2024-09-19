@@ -5,14 +5,15 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './alert-item.component.html',
   styleUrls: ['./alert-item.component.scss']
 })
-export class AlertItemComponent implements OnInit {
+export class AlertItemComponent {
   @Input() titleType:boolean;
   @Input() alert;
-  @Input() key;
+  @Input() key:string[];
+
   constructor() { }
-  ngOnInit(): void {
-  }
+  
   isArray(value:any){
     return Array.isArray(value);
   }
+
 }

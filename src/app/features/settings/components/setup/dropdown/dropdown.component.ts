@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2 } from '@angular/core';
+import {  Component, Input, OnInit, Renderer2 } from '@angular/core';
 import { SettingsService } from '../../../services/settings.service';
 import { SettingsCommunicationService } from '../../../services/settings-communication.service';
 
@@ -9,8 +9,8 @@ import { SettingsCommunicationService } from '../../../services/settings-communi
 })
 export class DropdownComponent implements OnInit {
   @Input() options: string[];
-  @Input() selectedOption;
-  @Input() key;
+  @Input() selectedOption:string;
+  @Input() key:string[];
   
   dropdownOpen = false;
   menuBtnClick = false;
@@ -37,7 +37,7 @@ export class DropdownComponent implements OnInit {
   selectOption(option: string,event:Event) {
     if(this.selectedOption!=option){
       this.selectedOption = option;
-      this.settingsCommunicationService.updateApplyChanges(true);
+      this.settingsCommunicationService.updateApplyChangesState(true);
       this.settingsService.updateKeyValueStore(this.key,option);
     }
     this.closeDropdown(event);
@@ -52,4 +52,8 @@ export class DropdownComponent implements OnInit {
     this.menuBtnClick = true;
   }
 
+  isDropdownOpen() {
+    return { 'active': this.dropdownOpen === true };
+  }
+  
 }

@@ -1,29 +1,20 @@
 
+<app-loading-spinner *ngIf="!settings"></app-loading-spinner>
 
-<div *ngFor="let section of settings | keyvalue">
+<ng-container *ngFor="let section of settings | keyvalue;trackBy: trackByItemKey">
     <app-settings-container
         [key]="section.key"
     >
-        <ng-container *ngIf="hasNestedStructure(section)">
-            <div *ngFor="let item of section.value | keyvalue">
-                <div class="container">
-                    <app-alert-container
-                        [key]="getSubObjectKey(section,item)"
-                        [alerts]="item"
-                    >
-                    </app-alert-container>
-                </div>
-            </div>
-        </ng-container>
-
-        <ng-container *ngIf="!hasNestedStructure(section)">
-            <div class="container">
-                <app-alert-container 
-                    [alerts]="section"
-                    [key]="getSingleObjectKey(section)"
-                >
-                </app-alert-container>
-            </div>
-        </ng-container>
+        <div *ngFor="let item of section.value | keyvalue;trackBy: trackByItemKey" class="setup-container">
+            <app-alert-container
+                [key]="getSubObjectKey(section,item)"
+                [alerts]="item"
+            >
+            </app-alert-container>
+        </div>
     </app-settings-container>
-</div>
+</ng-container>
+
+
+
+
