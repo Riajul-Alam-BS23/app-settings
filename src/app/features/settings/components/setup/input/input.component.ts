@@ -9,7 +9,7 @@ import { SettingsService } from '../../../services/settings.service';
 })
 export class InputComponent {
 
-  @Input() emails: string[] = ['Name@email.com'];
+  @Input() emails: string[];
   emailInput: string = '';
   @Input() key:string[];
 

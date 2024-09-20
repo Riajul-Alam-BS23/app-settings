@@ -6,7 +6,7 @@
   </div>
 
   <div class="alert-container-content">
-    <ng-container *ngFor="let alertKey of alerts.value | keyvalue;trackBy: trackByFn">
+    <ng-container *ngFor="let alertKey of alerts.value | keyvalue">
       <app-alert-item 
         *ngIf="alertKey && isObject(alertKey.value)" 
         [key]="getKey(alertKey)"

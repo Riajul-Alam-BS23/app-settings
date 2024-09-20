@@ -10,13 +10,10 @@ export class AlertContainerComponent {
   @Input() key:string[]=[];
   constructor() { }
 
-  isObject(value: any): boolean {
-    return (typeof value === 'object');
-  }
+  isObject(value: any): boolean {return (typeof value === 'object');}
 
   getKey(item:any){
-    const currentKey=[...this.key];
-    currentKey.push(item.key);
+    const currentKey=[...this.key,item.key];
     return currentKey;
   }
 
@@ -28,9 +25,6 @@ export class AlertContainerComponent {
     return {
       'background-color': (this.alerts.value.isHighlighted==="true"? '#ECECED': '')
     };
-  }
-  trackByFn(item: any) {
-    return item.key;
   }
   
 }

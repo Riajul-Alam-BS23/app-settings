@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SettingsService } from '../../../services/settings.service';
 import { SettingsCommunicationService } from '../../../services/settings-communication.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-settings-container',
@@ -12,7 +13,9 @@ import { SettingsCommunicationService } from '../../../services/settings-communi
 })
 export class SettingsContainerComponent implements OnInit {
   @Input() key:any;
+  
   onChangeDetect=false;
+  private subscription: Subscription;
   
   constructor(
     private settingsService:SettingsService,
@@ -20,7 +23,7 @@ export class SettingsContainerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.communicationService.getApplyChangesState().subscribe(data=>{
+    this.subscription = this.communicationService.getApplyChangesState().subscribe(data=>{
       this.onChangeDetect=data;
     });
   }
@@ -29,6 +32,13 @@ export class SettingsContainerComponent implements OnInit {
     this.settingsService.updateOnApplyChanges(this.key);
     this.communicationService.updateApplyChangesState(false);
   }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
 }
 
 

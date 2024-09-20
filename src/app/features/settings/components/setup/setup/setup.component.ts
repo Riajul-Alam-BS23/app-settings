@@ -25,9 +25,5 @@ export class SetupComponent implements OnInit {
     const currentKey=[value.key,value2.key];
     return [...currentKey];
   }
-  
-  trackByItemKey(item: any) {
-    return item.key;
-  }
 
 }

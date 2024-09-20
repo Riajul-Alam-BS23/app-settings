@@ -5,7 +5,7 @@
             <i class="fa fa-bars"></i>
         </div>
         <div class="logo">
-            <img style="height: 40px; width: 70px;" src="https://mms.businesswire.com/media/20201022005117/en/863276/23/4357163cTennantCompany-logo-fullcolor-transparent.jpg" alt="">
+            <img src="https://mms.businesswire.com/media/20201022005117/en/863276/23/4357163cTennantCompany-logo-fullcolor-transparent.jpg" alt="">
         </div>
     
         <div class="menu hide-item">
@@ -31,25 +31,25 @@
                     </span>
                 </div>
                 <div class="dropdown-menu" *ngIf="userButtonmenuOpen">
-                  <a href="#">Option 1</a>
-                  <a href="#">Option 2</a>
-                  <a href="#">Option 3</a>
-                  <a href="#">Option 1</a>
-                  <a href="#">Option 2</a>
-                  <a href="#">Option 3</a>
+                  <a routerLink="">Option 1</a>
+                  <a routerLink="">Option 2</a>
+                  <a routerLink="">Option 3</a>
+                  <a routerLink="">Option 1</a>
+                  <a routerLink="">Option 2</a>
+                  <a routerLink="">Logout</a>
                 </div>
               </div>
               
         </div>
     </div>
-    <div class="nav-menu" [ngClass]="{'open': menuOpen}">
-        <a class="menu-item">Overview</a>
-        <a class="menu-item">Location</a>
-        <a class="menu-item">Usage</a>
-        <a class="menu-item">Run Time</a>
-        <a class="menu-item">Admin</a>
-        <a class="menu-item">Service</a>
-        <a class="menu-item">Account</a>
+    <div class="nav-menu" [ngClass]="{'open': menuOpen}" (click)="toggleMenu()">
+        <a routerLink="" class="menu-item">Overview</a>
+        <a routerLink="" class="menu-item">Location</a>
+        <a routerLink="" class="menu-item">Usage</a>
+        <a routerLink="" class="menu-item">Run Time</a>
+        <a routerLink="" class="menu-item">Admin</a>
+        <a routerLink="" class="menu-item">Service</a>
+        <a routerLink="/settings/account" class="menu-item">Account</a>
     </div>
 </div>
 

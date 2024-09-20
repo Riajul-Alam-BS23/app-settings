@@ -93,7 +93,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "serviceRequest": {
           "label": "Service Request",

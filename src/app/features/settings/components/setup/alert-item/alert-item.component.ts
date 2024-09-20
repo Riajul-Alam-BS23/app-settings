@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-alert-item',
@@ -9,11 +9,7 @@ export class AlertItemComponent {
   @Input() titleType:boolean;
   @Input() alert;
   @Input() key:string[];
-
-  constructor() { }
   
-  isArray(value:any){
-    return Array.isArray(value);
-  }
+  isArray(value:any){return Array.isArray(value);}
 
 }

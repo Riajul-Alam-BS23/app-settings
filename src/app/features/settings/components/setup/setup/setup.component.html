@@ -1,11 +1,11 @@
 
 <app-loading-spinner *ngIf="!settings"></app-loading-spinner>
 
-<ng-container *ngFor="let section of settings | keyvalue;trackBy: trackByItemKey">
+<ng-container *ngFor="let section of settings | keyvalue;">
     <app-settings-container
         [key]="section.key"
     >
-        <div *ngFor="let item of section.value | keyvalue;trackBy: trackByItemKey" class="setup-container">
+        <div *ngFor="let item of section.value | keyvalue;" class="setup-container">
             <app-alert-container
                 [key]="getSubObjectKey(section,item)"
                 [alerts]="item"

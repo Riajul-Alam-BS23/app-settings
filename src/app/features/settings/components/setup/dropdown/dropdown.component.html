@@ -5,12 +5,8 @@
     (click)="toggleDropdown()" 
     (click)="preventCloseOnClick()"
 >
-    <span class="selected-option">
-        {{ selectedOption }}
-    </span>
-
+    <span class="selected-option">{{ selectedOption }}</span>
     <i class="arrow-down"></i>
-    
     <ul 
         class="dropdown-options" 
         *ngIf="dropdownOpen" 
