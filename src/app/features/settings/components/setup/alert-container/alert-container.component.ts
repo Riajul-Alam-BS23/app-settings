@@ -6,7 +6,7 @@ import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 })
 export class AlertContainerComponent {
   @Input() backgroundColor:string;
-  @Input() alerts;
+  @Input() alerts:any;
   @Input() key:string[]=[];
   constructor() { }
 

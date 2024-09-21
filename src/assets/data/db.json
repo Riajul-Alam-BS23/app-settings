@@ -50,7 +50,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "impactDetected": {
           "label": "Impact Detected",
@@ -130,7 +130,7 @@
             "4 hr",
             "5 hr"
           ],
-          "default": "5 hr"
+          "default": "1 hr"
         },
         "weekly": {
           "label": "Weekly",
@@ -188,7 +188,7 @@
             "Monthly",
             "Quarterly"
           ],
-          "default": "Weekly"
+          "default": "Quarterly"
         }
       }
     }

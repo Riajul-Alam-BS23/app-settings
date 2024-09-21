@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AlertItemComponent {
   @Input() titleType:boolean;
-  @Input() alert;
+  @Input() alert:any;
   @Input() key:string[];
   
   isArray(value:any){return Array.isArray(value);}
