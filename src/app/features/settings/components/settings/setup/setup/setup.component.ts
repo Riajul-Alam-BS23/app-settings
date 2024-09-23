@@ -1,6 +1,6 @@
 import {Component, OnInit } from '@angular/core';
-import { SettingsService } from '../../../services/settings.service';
-import { Endpoints } from '../../../models/SetUp';
+import { Endpoints } from 'src/app/features/settings/models/SetUp';
+import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
 @Component({
   selector: 'app-setup',

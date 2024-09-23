@@ -24,7 +24,7 @@
                 <span class="action-item-count">25</span>
             </span>
             <div class="dropdown">
-                <div class="user-button" (click)="toggleUserButtonMenu()">
+                <div class="user-button" (click)="toggleUserButtonMenu()" (click)="preventCloseOnClick()">
                     <span class="action-item">
                         <i class="fa-regular fa-circle-user"></i>
                         <span class="action-item-email">{{'USER@GMAIL.COM'}}</span>

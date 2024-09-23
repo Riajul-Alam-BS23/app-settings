@@ -1,6 +1,10 @@
 @use '../../../../../styles/abstracts/abstracts' as *;
 
 
+.settings-container{
+    margin-bottom: 200px;
+}
+
 .outer-switch-container{
     width: 100%;
     display: flex;

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Title } from '../../../models/SetUp';
+import { Title } from 'src/app/features/settings/models/SetUp';
 
 @Component({
   selector: 'app-title',

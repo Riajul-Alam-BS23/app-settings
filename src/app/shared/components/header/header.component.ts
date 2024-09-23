@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   menuOpen = false;
   userButtonmenuOpen=false;
-
-  constructor() { }
+  menuBtnClick = false;
+  constructor(
+    private renderer: Renderer2,
+  ) { }
 
   ngOnInit(): void {
+    this.renderer.listen('window', 'click', () => {
+      if (!this.menuBtnClick) {
+        this.userButtonmenuOpen = false;
+      }
+      this.menuBtnClick = false;
+    });
   }
 
   toggleMenu() {
@@ -19,6 +27,9 @@ export class HeaderComponent implements OnInit {
   }
   toggleUserButtonMenu() {
     this.userButtonmenuOpen =!this.userButtonmenuOpen;
+  }
+  preventCloseOnClick(){
+    this.menuBtnClick=true;
   }
 
 }

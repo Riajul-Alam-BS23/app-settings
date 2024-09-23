@@ -23,7 +23,7 @@
             "2 miles",
             "5 miles"
           ],
-          "default": "0.5 mile"
+          "default": "5 miles"
         },
         "noCharge": {
           "label": "No Charge Alert",
@@ -152,7 +152,7 @@
             "35 hr",
             "40 hr"
           ],
-          "default": "25 hr"
+          "default": "30 hr"
         }
       }
     },
@@ -178,7 +178,7 @@
             "Monthly",
             "Quarterly"
           ],
-          "default": "Quarterly"
+          "default": "Weekly"
         },
         "noCommunication": {
           "label": "No Communication",

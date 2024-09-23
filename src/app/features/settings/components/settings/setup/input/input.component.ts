@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { SettingsCommunicationService } from '../../../services/settings-communication.service';
-import { SettingsService } from '../../../services/settings.service';
+import { SettingsCommunicationService } from 'src/app/features/settings/services/settings-communication.service';
+import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
 @Component({
   selector: 'app-input',

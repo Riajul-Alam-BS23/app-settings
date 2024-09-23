@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input } from '@angular/core';
 @Component({
   selector: 'app-alert-container',
   templateUrl: './alert-container.component.html',
@@ -8,6 +8,7 @@ export class AlertContainerComponent {
   @Input() backgroundColor:string;
   @Input() alerts:any;
   @Input() key:string[]=[];
+
   constructor() { }
 
   isObject(value: any): boolean {return (typeof value === 'object');}

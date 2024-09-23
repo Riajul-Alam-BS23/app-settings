@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SettingsService } from '../../../services/settings.service';
-import { SettingsCommunicationService } from '../../../services/settings-communication.service';
 import { Subscription } from 'rxjs';
+import { SettingsCommunicationService } from 'src/app/features/settings/services/settings-communication.service';
+import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
 @Component({
   selector: 'app-settings-container',

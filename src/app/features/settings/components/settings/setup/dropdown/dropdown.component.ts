@@ -1,6 +1,6 @@
 import {  Component, Input, OnInit, Renderer2 } from '@angular/core';
-import { SettingsService } from '../../../services/settings.service';
-import { SettingsCommunicationService } from '../../../services/settings-communication.service';
+import { SettingsCommunicationService } from 'src/app/features/settings/services/settings-communication.service';
+import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
 @Component({
   selector: 'app-dropdown',
