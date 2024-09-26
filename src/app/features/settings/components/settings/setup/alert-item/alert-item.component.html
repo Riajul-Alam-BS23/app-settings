@@ -1,25 +1,27 @@
 
-<div class="item-container" *ngIf="!isArray(alert)">
+<div class="item-container" *ngIf="isFormGroup(alert)">
     <div class="title">
         <app-title 
-        [title]="alert"
+        [title]="getTitle()"
         ></app-title>
     </div>
     <div class="dropdown">
         <app-dropdown
-        [options]="alert.option"
-        [selectedOption]="alert.default"
+        [options]="alert.get('option').value"
+        [selectedOption]="alert.get('default').value"
         [key]="key"
         ></app-dropdown>
     </div>
 </div>
-<div class="input-container" *ngIf="isArray(alert)">
+
+
+<div class="input-container" *ngIf="isFormArray(alert)">
     <app-input
     [emails]="alert"
     [key]="key"
     >
     </app-input>
 </div>
-<hr *ngIf="!isArray(alert)">
+<hr *ngIf="isFormGroup(alert)">
 
 

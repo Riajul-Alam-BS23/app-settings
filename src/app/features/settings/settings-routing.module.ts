@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SettingsComponent } from './components/settings/settings.component';
 import { AccountComponent } from './components/settings/account/account.component';
 import { SetupComponent } from './components/settings/setup/setup/setup.component';
+import { TestingComponent } from './components/settings/setup/testing/testing.component';
 
 const routes: Routes = [
   {
@@ -16,10 +17,14 @@ const routes: Routes = [
       {
         path: 'setup',
         component:SetupComponent
+      },
+      {
+        path:'testing',
+        component:TestingComponent
       }
     ]
   },
-  { path: '', redirectTo: '/settings/account', pathMatch: 'full' }
+  { path: '', redirectTo: '/settings/testing', pathMatch: 'full' }
 ];
 
 @NgModule({

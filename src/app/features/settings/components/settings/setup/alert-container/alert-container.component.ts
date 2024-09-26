@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-alert-container',
   templateUrl: './alert-container.component.html',
@@ -11,7 +12,9 @@ export class AlertContainerComponent {
 
   constructor() { }
 
-  isObject(value: any): boolean {return (typeof value === 'object');}
+  ngOnInit(){
+    // console.log(this.key)
+  }
 
   getKey(item:any){
     const currentKey=[...this.key,item.key];
@@ -19,7 +22,8 @@ export class AlertContainerComponent {
   }
 
   getTitle(){
-    return {label:this.alerts.value.label,subLabel:this.alerts.value.subLabel};
+    // console.log("sfhsjkf *** ",this.alerts)
+    return {label:this.alerts.value['controls'].label.value,subLabel:this.alerts.value['controls'].subLabel.value};
   }
 
   getBackgroundColor(){
@@ -27,5 +31,7 @@ export class AlertContainerComponent {
       'background-color': (this.alerts.value.isHighlighted==="true"? '#ECECED': '')
     };
   }
-  
+  isFormControl(control: any): boolean {
+    return control instanceof FormControl;
+  }
 }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -19,12 +19,14 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   exports:[
     CommonModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     HeaderComponent,
     FooterComponent,
     LoadingSpinnerComponent,

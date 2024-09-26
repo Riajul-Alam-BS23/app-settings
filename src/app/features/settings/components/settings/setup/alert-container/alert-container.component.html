@@ -6,9 +6,9 @@
   </div>
 
   <div class="alert-container-content">
-    <ng-container *ngFor="let alertKey of alerts.value | keyvalue">
+    <ng-container *ngFor="let alertKey of alerts.value['controls'] | keyvalue">
       <app-alert-item 
-        *ngIf="alertKey && isObject(alertKey.value)" 
+        *ngIf="!isFormControl(alertKey.value)" 
         [key]="getKey(alertKey)"
         [alert]="alertKey.value"
       >

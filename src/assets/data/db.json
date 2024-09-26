@@ -50,7 +50,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "impactDetected": {
           "label": "Impact Detected",
@@ -59,7 +59,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "noCommunication": {
           "label": "No Communication",
@@ -102,7 +102,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "ABWtankEmpty": {
           "label": "ABW Tank Empty",

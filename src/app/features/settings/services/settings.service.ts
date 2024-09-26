@@ -27,7 +27,10 @@ export class SettingsService {
       }
     });
     if(count>0){
-      this.updateAlertsData(Endpoints[Endpoints.settings]);
+      const update={
+          [key]: this.settings[key]
+      }
+      this.updateAlertsData(Endpoints[Endpoints.settings],update);
     }
   }
   
@@ -36,9 +39,9 @@ export class SettingsService {
     return this.http.get<any>(apiUrl);
   }
 
-  updateAlertsData(type:string){
+  updateAlertsData(type:string,currentUpdate:any){ 
     const apiUrl = `${this.baseUrl}/${type}`;
-    this.http.post(apiUrl, this.settings).subscribe();
+    this.http.patch(apiUrl, currentUpdate).subscribe();
   }
   
   updateSettings(path: string[], newValue: string): void {

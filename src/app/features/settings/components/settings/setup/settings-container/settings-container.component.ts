@@ -23,6 +23,7 @@ export class SettingsContainerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // console.log("hahahaha ",this.key)
     this.subscription = this.communicationService.getApplyChangesState().subscribe(data=>{
       this.onChangeDetect=data;
     });

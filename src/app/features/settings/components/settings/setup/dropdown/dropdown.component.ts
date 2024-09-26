@@ -8,9 +8,9 @@ import { SettingsService } from 'src/app/features/settings/services/settings.ser
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
-  @Input() options: string[];
-  @Input() selectedOption:string;
-  @Input() key:string[];
+  @Input() options: any;
+  @Input() selectedOption:any;
+  @Input() key:any;
   
   dropdownOpen = false;
   menuBtnClick = false;
@@ -28,6 +28,7 @@ export class DropdownComponent implements OnInit {
       }
       this.menuBtnClick = false;
     });
+    console.log("this key ==> ",this.key)
   }
 
   toggleDropdown() {

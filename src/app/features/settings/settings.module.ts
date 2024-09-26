@@ -11,6 +11,7 @@ import { SettingsContainerComponent } from './components/settings/setup/settings
 import { SetupComponent } from './components/settings/setup/setup/setup.component';
 import { AccountComponent } from './components/settings/account/account.component';
 import { InputComponent } from './components/settings/setup/input/input.component';
+import { TestingComponent } from './components/settings/setup/testing/testing.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InputComponent } from './components/settings/setup/input/input.componen
     SettingsContainerComponent,
     SetupComponent,
     AccountComponent,
-    InputComponent
+    InputComponent,
+    TestingComponent
   ],
   imports: [
     SharedModule,

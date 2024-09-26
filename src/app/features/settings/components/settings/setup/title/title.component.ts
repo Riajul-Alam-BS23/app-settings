@@ -13,4 +13,5 @@ export class TitleComponent {
   getTitleType(){
     return this.titleType==true?'h2title':'h2item';
   }
+  
 }
