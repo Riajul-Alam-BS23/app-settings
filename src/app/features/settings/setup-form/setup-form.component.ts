@@ -1,5 +1,5 @@
-import { Component, Input, OnInit, Renderer2 } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Endpoints } from 'src/app/features/settings/models/SetUp';
 import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
@@ -13,20 +13,19 @@ export class SetupFormComponent {
 
   dropdownOpen = false;
   menuBtnClick = false;
-  emailInput: string = '';
 
   constructor(
     private fb: FormBuilder,
-    private settingsService: SettingsService,
-    private renderer: Renderer2
+    private settingsService: SettingsService
   ){}
+
   ngOnInit(){
     this.form = this.fb.group({});
     this.settingsService.getAlertsData(Endpoints[Endpoints.settings]).subscribe(data=>{
       this.form=this.buildForm(data);
-      console.log('form',this.form);
     });
   }
+
   buildForm(settings:any){
     const group = this.fb.group({});
     Object.keys(settings).forEach(key => {
@@ -34,42 +33,13 @@ export class SetupFormComponent {
       if(Array.isArray(section)){
         group.addControl(key, this.fb.control(section, Validators.required));
       }
-      else 
-      if(typeof section === 'object'){
+      else if(typeof section === 'object'){
         group.addControl(key, this.buildForm(section));
       } else{
         group.addControl(key, this.fb.control(section, Validators.required));
       }
     });
     return group;
-  }
-
-  toggleDropdown() {
-    this.dropdownOpen = !this.dropdownOpen;
-  }
-
-  selectOption(option: any,event:Event) {
-    // if(this.selectedOption['value']!=option['value']){
-    //   const defaultControl = this.alert.get('default');
-    //   if(defaultControl){
-    //     defaultControl.setValue(option['value']);
-    //     // defaultControl.markAsDirty();
-    //   }
-    // }
-    this.closeDropdown(event);
-  }
-
-  closeDropdown(event: Event) {
-    event.stopPropagation();
-    this.dropdownOpen = false;
-  }
-
-  preventCloseOnClick(){
-    this.menuBtnClick = true;
-  }
-
-  isDropdownOpen() {
-    return { 'active': this.dropdownOpen === true };
   }
 
   addEmail(subSection) {
@@ -81,16 +51,24 @@ export class SetupFormComponent {
     }
   }
 
-  removeEmail(index: number,emails,form1) {
+  removeEmail(index: number,emails:any,form1:any) {
     emails.splice(index, 1);
     form1.value.markAsDirty();
   }
+
   isObject(data){
     return typeof data.value['value'] === "object";
   }
+
   onApplyChange(section:any){
     this.settingsService.updateAlertsData(section);
     section.value.markAsPristine();
+  }
+  getBackgroundColor(subSection:any){
+    console.log("jkshf ",subSection.value['value'].isHighlighted);
+    return {
+      'background-color': (subSection.value['value'].isHighlighted==="true"? '#ECECED': '')
+    };
   }
 
 }

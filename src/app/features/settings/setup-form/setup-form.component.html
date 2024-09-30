@@ -1,6 +1,6 @@
 <div [formGroup]="form"  class="full-settings-form">
     <div  *ngFor="let section of form['controls'] |keyvalue" class="full-section">
-        <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue" class="setup-container">
+        <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue" class="setup-container" [ngStyle]="getBackgroundColor(subSection)">
             <div formGroupName="{{subSection.key}}" class="alert-container" [ngStyle]="">
                 <div class="alert-container-header">
                     <div class="title-container">
@@ -23,22 +23,8 @@
                         </div>
                         <div class="dropdown">
                             <div 
-                                class="custom-dropdown" 
-                                [ngClass]="isDropdownOpen()" 
-                                (click)="toggleDropdown()" 
-                                (click)="preventCloseOnClick()"
+                                class="custom-dropdown"
                             >
-                                <!-- <span class="selected-option">{{ singleFormGroup.value['controls']?.default.value }}</span>
-                                <i class="arrow-down"></i>
-                                <ul 
-                                    class="dropdown-options" 
-                                    *ngIf="dropdownOpen" 
-                                    (click)="closeDropdown($event)"
-                                >
-                                    <li class="option" *ngFor="let option of singleFormGroup.value['value'].option |keyvalue" (click)="selectOption(option,$event)">
-                                        {{ option.value }}
-                                    </li>
-                                </ul> -->
                                 <select formControlName="default">
                                     <option
                                       *ngFor="let option of singleFormGroup.value['value'].option"
@@ -47,7 +33,7 @@
                                     >
                                       {{ option }}
                                     </option>
-                                  </select>
+                                </select>
                             </div>
                         </div>
                     </div>

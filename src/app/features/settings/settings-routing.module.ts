@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SettingsComponent } from './components/settings/settings.component';
-import { AccountComponent } from './components/settings/account/account.component';
-import { SetupFormComponent } from './components/settings/setup/setup-form/setup-form.component';
+import { SettingsComponent } from './settings/settings.component';
 
 const routes: Routes = [
   {
     path: 'settings',
     component: SettingsComponent,
-    children:[
+    children: [
       {
-        path:'account',
-        component:AccountComponent
+        path: 'account',
+        loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
       },
       {
-        path:'setup-form',
-        component:SetupFormComponent
+        path: 'setup-form',
+        loadChildren: () => import('./setup-form/setup-form.module').then(m => m.SetupFormModule)
       }
     ]
   },
