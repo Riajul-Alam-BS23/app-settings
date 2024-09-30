@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import { SettingsModule } from './features/settings/settings.module';
+import { SettingsModule } from './features/settings/settings/settings.module';
 
 @NgModule({
   declarations: [
