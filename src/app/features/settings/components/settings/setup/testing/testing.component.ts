@@ -10,7 +10,7 @@ import { SettingsService } from 'src/app/features/settings/services/settings.ser
 })
 export class TestingComponent implements OnInit {
   form: FormGroup;
-
+  isDetect:boolean=false;
   constructor(private fb: FormBuilder, private settingsService: SettingsService) {}
 
   ngOnInit(): void {
@@ -42,15 +42,14 @@ export class TestingComponent implements OnInit {
     });
     return group;
   }
+
   getSubObjectKey(section:any,item:any){
     const currentKey=[section.key,item.key];
-    // console.log(currentKey);
     return [...currentKey];
   }
 
   onApplyChange(sectionKey:any){
-    this.settingsService.updateOnApplyChanges(sectionKey);
-    // this.communicationService.updateApplyChangesState(false);
+    // this.settingsService.updateOnApplyChanges(sectionKey);
   }
 
 }

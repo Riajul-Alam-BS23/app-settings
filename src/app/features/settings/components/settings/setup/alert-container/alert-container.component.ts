@@ -13,7 +13,6 @@ export class AlertContainerComponent {
   constructor() { }
 
   ngOnInit(){
-    // console.log(this.key)
   }
 
   getKey(item:any){
@@ -22,7 +21,6 @@ export class AlertContainerComponent {
   }
 
   getTitle(){
-    // console.log("sfhsjkf *** ",this.alerts)
     return {label:this.alerts.value['controls'].label.value,subLabel:this.alerts.value['controls'].subLabel.value};
   }
 
@@ -33,5 +31,9 @@ export class AlertContainerComponent {
   }
   isFormControl(control: any): boolean {
     return control instanceof FormControl;
+  }
+  changeMe(alertKey){
+    // console.log("test ",alertKey.value['value'].label);
+    console.log("is dirty check ",alertKey.value.dirty);
   }
 }

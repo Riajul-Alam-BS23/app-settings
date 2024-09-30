@@ -1,4 +1,5 @@
 import {  Component, Input, OnInit, Renderer2 } from '@angular/core';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import { SettingsCommunicationService } from 'src/app/features/settings/services/settings-communication.service';
 import { SettingsService } from 'src/app/features/settings/services/settings.service';
 
@@ -8,9 +9,10 @@ import { SettingsService } from 'src/app/features/settings/services/settings.ser
   styleUrls: ['./dropdown.component.scss'],
 })
 export class DropdownComponent implements OnInit {
-  @Input() options: any;
-  @Input() selectedOption:any;
+  @Input() options: FormArray|FormControl|FormGroup;
+  @Input() selectedOption:FormArray|FormControl|FormGroup;
   @Input() key:any;
+  @Input() alert:FormArray|FormControl|FormGroup;
   
   dropdownOpen = false;
   menuBtnClick = false;
@@ -28,18 +30,22 @@ export class DropdownComponent implements OnInit {
       }
       this.menuBtnClick = false;
     });
-    console.log("this key ==> ",this.key)
   }
 
   toggleDropdown() {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  selectOption(option: string,event:Event) {
-    if(this.selectedOption!=option){
-      this.selectedOption = option;
+  selectOption(option: any,event:Event) {
+    if(this.selectedOption['value']!=option['value']){
+      const defaultControl = this.alert.get('default');
+      if(defaultControl){
+        defaultControl.setValue(option['value']);
+        // defaultControl.markAsDirty();
+      }
       this.settingsCommunicationService.updateApplyChangesState(true);
-      this.settingsService.updateKeyValueStore(this.key,option);
+      // this.settingsService.updateKeyValueStore(this.key,option['value']);
+      console.log("two option selectedOption ",this.options, " ",this.selectedOption)
     }
     this.closeDropdown(event);
   }
@@ -56,5 +62,8 @@ export class DropdownComponent implements OnInit {
   isDropdownOpen() {
     return { 'active': this.dropdownOpen === true };
   }
+  // showMe(item:any){
+  //   console.log("item ==> ",item)
+  // }
   
 }

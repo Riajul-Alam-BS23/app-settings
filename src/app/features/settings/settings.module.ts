@@ -12,6 +12,7 @@ import { SetupComponent } from './components/settings/setup/setup/setup.componen
 import { AccountComponent } from './components/settings/account/account.component';
 import { InputComponent } from './components/settings/setup/input/input.component';
 import { TestingComponent } from './components/settings/setup/testing/testing.component';
+import { SetupFormComponent } from './components/settings/setup/setup-form/setup-form.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TestingComponent } from './components/settings/setup/testing/testing.co
     SetupComponent,
     AccountComponent,
     InputComponent,
-    TestingComponent
+    TestingComponent,
+    SetupFormComponent
   ],
   imports: [
     SharedModule,

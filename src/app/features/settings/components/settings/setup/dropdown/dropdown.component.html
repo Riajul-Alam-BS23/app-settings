@@ -5,15 +5,15 @@
     (click)="toggleDropdown()" 
     (click)="preventCloseOnClick()"
 >
-    <span class="selected-option">{{ selectedOption }}</span>
+    <span class="selected-option">{{ selectedOption['value'] }}</span>
     <i class="arrow-down"></i>
     <ul 
         class="dropdown-options" 
         *ngIf="dropdownOpen" 
         (click)="closeDropdown($event)"
     >
-        <li class="option" *ngFor="let option of options" (click)="selectOption(option,$event)">
-            {{ option }}
+        <li class="option" *ngFor="let option of alert.get('option').value |keyvalue" (click)="selectOption(option,$event)">
+            {{ option.value }}
         </li>
     </ul>
 </div>

@@ -1,0 +1,94 @@
+<div [formGroup]="form" >
+    <div  *ngFor="let section of form['controls'] |keyvalue" >
+        <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue" class="setup-container">
+            <div formGroupName="{{subSection.key}}" class="alert-container" [ngStyle]="">
+                <div class="alert-container-header">
+                    <div class="title-container">
+                        <h2 class="title" >{{subSection.value['controls']?.label.value}}</h2>
+                        <p class="subTitle">{{subSection.value['controls']?.subLabel.value}}</p>
+                    </div>                
+                </div>
+
+                <div class="alert-container-content" *ngIf="!(subSection.value['value'].isEmail)" >
+                  <div formGroupName="{{singleFormGroup.key}}" *ngFor="let singleFormGroup of subSection.value['controls'] | keyvalue">
+                    <div class="item-container" *ngIf="isObject(singleFormGroup)" >
+
+                        <div class="title">
+                            <div class="alert-container-header">
+                                <div class="title-container">
+                                    <h2 class="title" >{{singleFormGroup.value['controls']?.label.value}}</h2>
+                                    <p class="subTitle">{{singleFormGroup.value['controls']?.subLabel.value}}</p>
+                                </div>                
+                            </div>
+                        </div>
+                        <div class="dropdown">
+                            <div 
+                                class="custom-dropdown" 
+                                [ngClass]="isDropdownOpen()" 
+                                (click)="toggleDropdown()" 
+                                (click)="preventCloseOnClick()"
+                            >
+                                <!-- <span class="selected-option">{{ singleFormGroup.value['controls']?.default.value }}</span>
+                                <i class="arrow-down"></i>
+                                <ul 
+                                    class="dropdown-options" 
+                                    *ngIf="dropdownOpen" 
+                                    (click)="closeDropdown($event)"
+                                >
+                                    <li class="option" *ngFor="let option of singleFormGroup.value['value'].option |keyvalue" (click)="selectOption(option,$event)">
+                                        {{ option.value }}
+                                    </li>
+                                </ul> -->
+                                <select formControlName="default">
+                                    <option
+                                      *ngFor="let option of singleFormGroup.value['value'].option"
+                                      [selected]="option === singleFormGroup.value['value'].default"
+                                      [value]="option"
+                                    >
+                                      {{ option }}
+                                    </option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <hr *ngIf="(!subSection.value['value'].isEmail && isObject(singleFormGroup))" >
+                  </div>
+
+                  
+                </div>
+                
+                <div class="input-container" *ngIf="subSection.value['value'].isEmail">
+                    <div class="email-container">
+                        <p *ngFor="let email of subSection.value['value'].emails; let i = index" class="email-item">
+                            {{ email }}
+                            <button 
+                                type="button" 
+                                class="remove-btn" 
+                                (click)="removeEmail(i,subSection.value['value'].emails,subSection)"
+                            >
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </p>
+                        <input 
+                            formControlName="default"
+                            (keydown.enter)="addEmail(subSection)" 
+                            placeholder="FirstName@em"
+                            class="email-input" 
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-container">
+            <button 
+                [disabled]="!section.value.dirty" 
+                class="apply-button" 
+                (click)="onApplyChange(section)"
+            >
+                Apply Changes
+            </button>
+        </div>
+    </div>
+</div>
+
+

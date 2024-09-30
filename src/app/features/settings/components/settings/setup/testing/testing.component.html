@@ -19,12 +19,13 @@
 </ng-container> -->
 
 
-<ng-container *ngFor="let section of form.controls| keyvalue;">{{showMe(section.value['value'])}}
-    <app-settings-container
+<ng-container [formGroup]="form" *ngFor="let section of form.controls| keyvalue;">
+    
+    <!-- <app-settings-container
         [key]="section.key"
     >
-        <div *ngFor="let item of section.value['controls'] | keyvalue;" class="setup-container">
-            <app-alert-container
+        <div formGroupName="{{section.key}}" *ngFor="let item of section.value['controls'] | keyvalue;" class="setup-container">
+            <app-alert-container 
                 [key]="getSubObjectKey(section,item)"
                 [alerts]="item"
             >
@@ -32,13 +33,19 @@
         </div>
         <div class="button-container">
             <button 
-                [disabled]="true" 
+                [disabled]="!section.value.dirty"
                 class="apply-button" 
                 (click)="onApplyChange(section.key)"
             >
                 Apply Changes
             </button>
         </div>
-    </app-settings-container>
+    </app-settings-container> -->
+
+    <!-- <app-setup-form
+      [sectionForm]="section"  
+    >
+    </app-setup-form> -->
+
 
 </ng-container>

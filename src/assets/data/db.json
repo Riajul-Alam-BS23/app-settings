@@ -5,6 +5,8 @@
         "label": "EMAIL ADDRESSES TO COPY",
         "subLabel": "",
         "isHighlighted": "false",
+        "isEmail": true,
+        "default": "",
         "emails": [
           "Name@email.com",
           "riajulalam5@gmail.com"
@@ -14,6 +16,7 @@
         "label": "GENERAL ALERTS",
         "subLabel": "Receive an email if these alerts are triggered",
         "isHighlighted": "false",
+        "isEmail": false,
         "machineRelocation": {
           "label": "Machine Relocated",
           "subLabel": "Triggered if the machine reported a location that is outside the set radius of its home location. № Alert Radius(1 mile = 1.6 km)",
@@ -23,7 +26,7 @@
             "2 miles",
             "5 miles"
           ],
-          "default": "5 miles"
+          "default": "2 miles"
         },
         "noCharge": {
           "label": "No Charge Alert",
@@ -50,7 +53,7 @@
             "On",
             "Off"
           ],
-          "default": "Off"
+          "default": "On"
         },
         "impactDetected": {
           "label": "Impact Detected",
@@ -86,6 +89,7 @@
         "label": "OTHER ALERTS",
         "subLabel": "Only available for certain customers. Please contact your sales rep for details.",
         "isHighlighted": "true",
+        "isEmail": false,
         "noServicePerformed": {
           "label": "No Service Performed",
           "subLabel": "Triggered if a machine has not been serviced in the selected period.",
@@ -93,7 +97,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "serviceRequest": {
           "label": "Service Request",
@@ -102,7 +106,7 @@
             "On",
             "Off"
           ],
-          "default": "On"
+          "default": "Off"
         },
         "ABWtankEmpty": {
           "label": "ABW Tank Empty",
@@ -120,6 +124,7 @@
         "label": "LOW USAGE",
         "subLabel": "Receive an email if a machine is used less than a chosen threshold",
         "isHighlighted": "false",
+        "isEmail": false,
         "daily": {
           "label": "Daily",
           "subLabel": "Set value lower than what you consider low",
@@ -130,7 +135,7 @@
             "4 hr",
             "5 hr"
           ],
-          "default": "1 hr"
+          "default": "5 hr"
         },
         "weekly": {
           "label": "Weekly",
@@ -161,6 +166,8 @@
         "label": "EMAIL ADDRESSES TO COPY",
         "subLabel": "",
         "isHighlighted": "false",
+        "isEmail": true,
+        "default": "",
         "emails": [
           "Name@email.com",
           "test@gmail.com"
@@ -170,6 +177,7 @@
         "label": "REPORTS",
         "subLabel": "",
         "isHighlighted": "false",
+        "isEmail": false,
         "machineRelocation": {
           "label": "Machine Relocated",
           "subLabel": "Triggered if the machine reported a location that is outside the set radius of its home location. № Alert Radius(1 mile = 1.6 km)",

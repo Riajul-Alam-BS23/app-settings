@@ -1,0 +1,201 @@
+@use '../../../../../../../styles/abstracts/abstracts' as *;
+
+
+.setup-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.alert-container {
+  display: grid;
+  grid-template-columns: 100%;
+  width: 1000px;
+  @include respond-to(small) {
+    grid-template-columns: 33% 67%;
+    margin: 1.2rem 0;
+    padding: 0 1rem;
+  }
+    .item-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .title{
+            width: 70%;
+        }
+        .dropdown{
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            width: 30%;
+            margin-right: 10px;
+            .custom-dropdown {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 10px;
+                width: 100px;
+                background-color: #f4f4f4;
+                border-radius: 4px;
+                font-size: 14px;
+                color: #333;
+                cursor: pointer;
+                border: 1px solid #ddd;
+                font-weight: bold;
+            
+                @include respond-to(small) {
+                    padding: 7px 10px;
+                    width: 120px;
+                }
+                @include respond-to(medium) {
+                    padding: 7px 10px;
+                    width: 150px;
+                }
+            }
+            
+            
+            .arrow-down {
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid #333;
+            }
+            
+            .dropdown-options {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #f4f4f4;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+                margin-top: 5px;
+                z-index: 1000;
+                list-style: none;
+                padding: 0;
+            
+                .option {
+                    padding: 7px 10px;
+                    cursor: pointer;
+                    border-bottom: 1px solid #ddd;
+            
+                    &:hover {
+                        background-color: #e9e9e9;
+                    }
+                }
+            }
+            
+            .custom-dropdown.active .dropdown-options {
+                display: block;
+            }
+            
+        }
+
+        @include respond-to(small) {
+            .title{
+                width: 70%;
+                margin-right: 20px;
+            }
+            .dropdown{
+                width: 30%;
+            }
+        }
+
+    }
+
+    .input-container{
+        background-color: #ECECED;
+        border-radius: 8px;
+        margin: 0 8px;
+        
+        .email-container {
+            border: 1px solid $secondary-color;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: auto;
+            box-sizing: border-box;
+            background-color: $secondary-color;
+            border-radius: 8px;
+        }
+        
+        .email-item {
+            display: inline-block;
+            background-color: #FAFAFA;
+            padding: 5px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #777;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        
+        .email-input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+            min-width: 150px;
+            background-color: $secondary-color;
+            margin: 5px;
+        }
+        
+        .email-input::placeholder {
+            color: #0a0a0a;
+        }
+    }
+
+
+    hr{
+        border: 1px solid #ddd;
+    }
+}
+
+h2 {
+    font-size: 0.8rem;
+    margin: 0;
+    line-height: 100%;
+  }
+
+  .apply-button{
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 12px;
+    width: 95%;
+
+    position: relative;
+    @include respond-to(small) {
+        width: 150px;
+    }
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}
+.button-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include respond-to(small) {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+}
+

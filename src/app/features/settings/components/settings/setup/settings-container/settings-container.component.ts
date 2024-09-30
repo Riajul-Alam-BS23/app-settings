@@ -23,14 +23,14 @@ export class SettingsContainerComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // console.log("hahahaha ",this.key)
+    // console.log("testing ",this.key)
     this.subscription = this.communicationService.getApplyChangesState().subscribe(data=>{
       this.onChangeDetect=data;
     });
   }
   
   onApplyChange(){
-    this.settingsService.updateOnApplyChanges(this.key);
+    // this.settingsService.updateOnApplyChanges(this.key);
     this.communicationService.updateApplyChangesState(false);
   }
 

@@ -7,9 +7,10 @@
     </div>
     <div class="dropdown">
         <app-dropdown
-        [options]="alert.get('option').value"
-        [selectedOption]="alert.get('default').value"
+        [options]="getControl(alert)"
+        [selectedOption]="getDefault(alert)"
         [key]="key"
+        [alert]="alert"
         ></app-dropdown>
     </div>
 </div>
