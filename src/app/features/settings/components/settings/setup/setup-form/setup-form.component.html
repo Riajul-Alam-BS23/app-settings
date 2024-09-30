@@ -1,5 +1,5 @@
-<div [formGroup]="form" >
-    <div  *ngFor="let section of form['controls'] |keyvalue" >
+<div [formGroup]="form"  class="full-settings-form">
+    <div  *ngFor="let section of form['controls'] |keyvalue" class="full-section">
         <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue" class="setup-container">
             <div formGroupName="{{subSection.key}}" class="alert-container" [ngStyle]="">
                 <div class="alert-container-header">

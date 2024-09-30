@@ -1,10 +1,14 @@
 @use '../../../../../../../styles/abstracts/abstracts' as *;
 
-
+.full-settings-form{
+    width: 100%;
+}
+.full-section{
+    width: 1000px;
+    
+}
 .setup-container{
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 .alert-container {
   display: grid;
