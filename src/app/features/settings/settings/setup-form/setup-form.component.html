@@ -1,6 +1,6 @@
 <div [formGroup]="form"  class="full-settings-form">
-    <div  *ngFor="let section of form['controls'] |keyvalue" class="full-section">
-        <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue" class="setup-container" [ngStyle]="getBackgroundColor(subSection)">
+    <div  *ngFor="let section of form['controls'] |keyvalue ; trackBy: trackByKey" class="full-section">
+        <div formGroupName="{{section.key}}" *ngFor="let subSection of section.value['controls'] |keyvalue; trackBy: trackByKey" class="setup-container" [ngStyle]="getBackgroundColor(subSection)">
             <div formGroupName="{{subSection.key}}" class="alert-container" [ngStyle]="">
                 <div class="alert-container-header">
                     <div class="title-container">
@@ -10,7 +10,7 @@
                 </div>
 
                 <div class="alert-container-content" *ngIf="!(subSection.value['value'].isEmail)" >
-                  <div formGroupName="{{singleFormGroup.key}}" *ngFor="let singleFormGroup of subSection.value['controls'] | keyvalue">
+                  <div formGroupName="{{singleFormGroup.key}}" *ngFor="let singleFormGroup of subSection.value['controls'] | keyvalue; trackBy: trackByKey">
                     <div class="item-container" *ngIf="isObject(singleFormGroup)" >
 
                         <div class="title">
@@ -45,7 +45,7 @@
                 
                 <div class="input-container" *ngIf="subSection.value['value'].isEmail">
                     <div class="email-container">
-                        <p *ngFor="let email of subSection.value['value'].emails; let i = index" class="email-item">
+                        <p *ngFor="let email of subSection.value['value'].emails; trackBy: trackByKey; let i = index" class="email-item">
                             {{ email }}
                             <button 
                                 type="button" 

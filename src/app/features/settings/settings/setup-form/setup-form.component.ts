@@ -65,10 +65,12 @@ export class SetupFormComponent {
     section.value.markAsPristine();
   }
   getBackgroundColor(subSection:any){
-    console.log("jkshf ",subSection.value['value'].isHighlighted);
     return {
       'background-color': (subSection.value['value'].isHighlighted==="true"? '#ECECED': '')
     };
+  }
+  trackByKey(index: number, item: any): string {
+    return item.key;
   }
 
 }
