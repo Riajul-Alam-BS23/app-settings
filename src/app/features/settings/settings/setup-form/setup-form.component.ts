@@ -56,7 +56,7 @@ export class SetupFormComponent {
     form1.value.markAsDirty();
   }
 
-  isObject(data){
+  isObject(data:any){
     return typeof data.value['value'] === "object";
   }
 
