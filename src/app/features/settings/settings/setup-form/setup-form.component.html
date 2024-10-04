@@ -28,7 +28,9 @@
                                     <select formControlName="default" class="custom-dropdown">
                                         <option *ngFor="let option of singleFormGroup.value['value'].option"
                                             [selected]="option === singleFormGroup.value['value'].default"
-                                            [value]="option">
+                                            [value]="option"
+                                            class="option"
+                                            >
                                             {{ option }}
                                         </option>
                                     </select>
